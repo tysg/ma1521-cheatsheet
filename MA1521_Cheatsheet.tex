@@ -82,7 +82,7 @@
 \large{
     \underline{MA1521 Cheat Sheet} \\
     \texttt{github.com/tysng/ma1521-cheatsheet} \\
-    Nov 2018}
+    May 2019}
 \end{flushleft}
 
 % ------------------------------ACTUAL CONTENT-----------------------------------
@@ -223,7 +223,7 @@ Angle between two vectors: $\cos \theta = \frac{x_1 x_2 + y_1 y_2 + z_1 z_2}{\no
 
 Perpendicular vectors: $\vec{v_1} \cdot \vec{v_2} = 0$
 
-\section{Partial Diffrentiation}
+\section{Partial Differentiation}
 \begin{gather*}
 f_{xy} (a,b) = f_{yx} (a,b ) \\
 \frac{dz}{dt} = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt} \\
@@ -269,9 +269,34 @@ $$ D = f_{xx}(a,b) f_{yy} (a,b) - f_{xy} (a,b)^2 $$
 
 
 
+\section{Double Integrals}
+For a region $R$ s.t. $a \leq x \leq b$ and $c \leq y \leq d$, volume is given by:
+\begin{gather*}
+\int\!\int_R\! f(x, y)\, \mathrm{d}A = \int_c^d\!\int_a^b\! f(x, y)\, \mathrm{d}x \mathrm{d}y = \int_a^b\!\int_c^d\! f(x, y)\, \mathrm{d}y \mathrm{d}x
+\end{gather*}
+if $f(x, y) = g(x)h(y)$,
+then $$\int\!\int_R f(x,y) \, \mathrm{d}A = (\int_a^b\!g(x)\, \mathrm{d}x) (\int_c^d\!h(y)\, \mathrm{d}y)$$
 
-
-
+\subsection{Rectangular Regions}
+Express horizontal/vertical bounds as a function $g(x)$ or $h(y)$ \\
+Type A(top and bottom are curves)
+$$
+\int_a^b\!
+\left [
+\int_{g_1(x)}^{g_2(x)}\!f(x, y)\, \mathrm{d}y
+\right ] \mathrm{d}x $$
+Type B(left and right are curves) $$\int_c^d\!
+\left [
+\int_{h_1(y)}^{h_2(y)}\!f(x, y)\, \mathrm{d}x
+\right ] \mathrm{d}y$$
+\subsection{Polar Coordinates}
+$R$: $a \leq r \leq b$, $\alpha \leq \theta \leq \beta$
+$$
+\int\!\int_R\! f(x, y)\, \mathrm{d}A = 
+\int_\alpha^\beta\!\int_a^b\!f(r\cos\theta, r\sin\theta)r\, \mathrm{d}r\mathrm{d}\theta
+$$
+\subsection{Surface Area}
+$$S = \int\!\int_R\! \sqrt{(\frac{\partial z}{\partial x})^2 + (\frac{\partial z}{\partial y})^2 + 1 }\, \mathrm{d}A$$
 
 
 
@@ -375,3 +400,4 @@ Let both sides be $k$, or let them be $k, 1/k$; and solve $X, Y$ in $k, c$;
 \bibliography{refFile}
 \end{multicols}
 \end{document}
+
